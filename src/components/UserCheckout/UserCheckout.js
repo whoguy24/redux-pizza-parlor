@@ -1,0 +1,78 @@
+//this goes inside UserCheckout.js
+
+import axios from 'axios';
+import React, { useState, useEffect } from 'react';
+//import {useSelector} from 'react-redux'
+import axios from 'axios';
+
+
+
+//create a function and pass state using useSelector/reducer and returning store
+
+//function to get the customers information
+
+//
+function UserCheckout({yassirsVeryLongVariable}) {
+
+    const [customer_name, setCustomerName] = useState('')
+    const [street_address, setStreetAddress] = useState('')
+    const [city, setCity] = useState('');
+    const [zip, setZip] = useState('');
+    const [total, setTotal] = useState('');
+    const [type, setType] = useState('');
+    const [pizzas, setPizzas] = useState('');
+    const [city, setCity] = useState('');
+    
+
+// "customer_name": "Donatello",
+// "street_address": "20 W 34th St",
+// "city": "New York",
+// "zip": "10001",
+// "total": "27.98",
+// "type": "Pickup",
+// "pizzas": [{
+//   "id": "1",
+//   "quantity": "1"
+// },{
+//   "id": "2",
+//   "quantity": "1"
+const handleSubmit = event => {
+    event.preventDefault();
+
+
+const newOrder = {
+    customer_name: setCustomerName,
+    street_address: setStreetAddress,
+    city: setCity,
+    zip: setZip,
+    total: setTotal,
+    type: setType,
+    pizzas: setPizzas,
+    id: '1',
+    quantity: '1'
+}
+axios({
+    method: 'POST',
+    url: '/api/order',
+    data: newOrder
+})
+.then((response) => {
+    console.log('In order POST', response);
+
+    yassirsVeryLongVariable();
+    
+})
+
+}//end handleSubmit function
+
+return (
+    <form>
+        
+    </form>
+    
+)
+
+
+
+
+};
