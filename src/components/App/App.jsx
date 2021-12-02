@@ -17,6 +17,7 @@ function App() {
   // Run on Page Load
   useEffect(() => {
     refreshPizzas();
+    getPizzaOrders();
   }, []);
 
   // Pizzas GET request
@@ -35,17 +36,33 @@ function App() {
     });
   };
 
+  // axios GET request for pizza orders
+  getPizzaOrders = () => {
+    axios({
+      method: 'GET',
+      url: '/api/order'
+    })
+    .then((res) => {
+      const pizzaOrders = res.data;
+      dispatch({
+        type: 'SET_PIZZA_ORDERS',
+        payload: pizzaOrders
+      })
+    })
+  };
+
   return (
     <div className='App'>
       <header className='App-header'>
         <h1 className='App-title'>Prime Pizza</h1>
       </header>
-  
+
       <img src='images/pizza_photo.png' />
       <p>Pizza is great.</p>
 
       <PizzaList />
-  
+      <PizzaOrders getPizzaOrders={getPizzaOrders} />
+
     </div>
   );
 }
