@@ -15,11 +15,20 @@ const pizzasReducer = (state = [], action) => {
     return state;
 };
 
+// Pizza Orders reducer
+const pizzaOrderList = (state = [], action) => {
+    if (action.type === 'SET_PIZZA_ORDERS'){
+        return action.payload;
+    }
+    return state;
+}
+
 // Create Store Instance
 const storeInstance = createStore(
     combineReducers({
-        pizzasReducer
-    }),    
+        pizzasReducer,
+        pizzaOrderList
+    }),
 );
 
 ReactDOM.render(<Provider store={storeInstance}><App /></Provider>, document.getElementById('root'));
