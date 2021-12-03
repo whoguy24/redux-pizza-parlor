@@ -10,38 +10,18 @@ function MenuList() {
   const pizzas = useSelector((store) => store.menuReducer);
   const cart = useSelector((store) => store.cartReducer);
 
-  function refresh() {
-    console.log(cart);
-  }
-
-  function addPizzaToCart() {
-    let pizza1 = {
-      id:10,
-      name:'Warrens Special Homemade Frozen Pizza',
-      description: '',
-      price: '',
-      image_path: ''
-    }
+  function addPizzaToCart(pizzaObject) {
     dispatch({
       type: 'ADD_PIZZA_TO_CART',
-      payload: pizza1,
+      payload: pizzaObject,
     })
-    console.log(cart);
   }
 
-  function removePizzaFromCart () {
-    let pizza1 = {
-      id:10,
-      name:'Warrens Special Homemade Frozen Pizza',
-      description: '',
-      price: '',
-      image_path: ''
-    }
+  function removePizzaFromCart (pizzaObject) {
     dispatch({
       type: 'REMOVE_PIZZA_FROM_CART',
-      payload: pizza1
+      payload: pizzaObject
     })
-    console.log(cart);
   }
 
 // We need to import the pizza table from Postico and return the pizzas to display:
@@ -51,11 +31,6 @@ function MenuList() {
 // Can't think of anything else we need to do at the moment.
 
   return (
-
-
-  
-
-
     <div>
         {pizzas.map((pizza, i) =>
           <ul key={i}>
@@ -63,6 +38,8 @@ function MenuList() {
             <p>{pizza.name}</p>
             <p>{pizza.description}</p>
             <p>{pizza.price} </p>
+            <button onClick = { () => {addPizzaToCart(pizza)}}>Add to Cart</button>
+            <button onClick = { () => {removePizzaFromCart(pizza)}}>Remove from Cart</button>
           </ul>
         )}
     </div>
