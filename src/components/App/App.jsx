@@ -62,7 +62,8 @@ function App() {
       <p>Pizza is great.</p>
 
       <MenuList />
-      <CustomerInfo getPizzaOrders={getPizzaOrders} />
+      {/* <CustomerInfo getPizzaOrders={getPizzaOrders} /> */}
+      <CustomerInfo/>
 
     </div>
   );
