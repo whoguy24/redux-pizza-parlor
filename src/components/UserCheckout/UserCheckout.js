@@ -54,10 +54,9 @@ axios({
 }//end handleSubmit function
 
 return (
-    <p>
-        This is where the checkout is, kinda
+    <form>
 
-    </p>
+    </form>
     
 )
 
