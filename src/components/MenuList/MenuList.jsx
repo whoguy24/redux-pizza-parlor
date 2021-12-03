@@ -44,24 +44,27 @@ function MenuList() {
     console.log(cart);
   }
 
+// We need to import the pizza table from Postico and return the pizzas to display:
+  // We have to loop through the items. Instead of returning yay a pizza lives here, how can we return the pizzas? 🤔
+// We need to use Warren's pizza GET ROUTE from App.jsx
+// Maybe we need to use the menuReducer from index.js too
+// Can't think of anything else we need to do at the moment.
+
   return (
 
 
-    
+  
 
 
     <div>
-
-      <button onClick={() => {refresh()}}>refresh</button>
-      <button onClick={() => {addPizzaToCart()}}>Add Pizza</button>
-      <button onClick={() => {removePizzaFromCart()}}>Remove Pizza</button>
-
-
-      <ul>
-        {pizzas.map((pizza, i) => {
-          return <p>Yay a pizza lives here.</p>;
-        })}
-      </ul>
+        {pizzas.map((pizza, i) =>
+          <ul key={i}>
+            <p><img src={pizza.image_path} height="100" width="100"/></p>
+            <p>{pizza.name}</p>
+            <p>{pizza.description}</p>
+            <p>{pizza.price} </p>
+          </ul>
+        )}
     </div>
   );
 }
