@@ -14,11 +14,12 @@ function MenuList() {
   return (
     <div>
         {pizzas.map((pizza, i) =>
-          <p key={i}> <img src={pizza.image_path} height="100" width="100"/>
-          <p>{pizza.name}</p>
-          <p>{pizza.description}</p>
-          <p>{pizza.price} </p>
-          </p>
+          <ul key={i}>
+            <p><img src={pizza.image_path} height="100" width="100"/></p>
+            <p>{pizza.name}</p>
+            <p>{pizza.description}</p>
+            <p>{pizza.price} </p>
+          </ul>
         )}
     </div>
   );
