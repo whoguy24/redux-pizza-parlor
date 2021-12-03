@@ -7,8 +7,8 @@ import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 
 // Import Components
-import PizzaList from '../PizzaList/PizzaList.jsx';
-import PizzaOrders from '../PizzaOrders/PizzaOrders.jsx'
+import MenuList from '../MenuList/MenuList.jsx';
+import CustomerInfo from '../CustomerInfo/CustomerInfo.jsx'
 
 function App() {
 
@@ -61,8 +61,8 @@ function App() {
       <img src='images/pizza_photo.png' />
       <p>Pizza is great.</p>
 
-      <PizzaList />
-      <PizzaOrders getPizzaOrders={getPizzaOrders} />
+      <MenuList />
+      <CustomerInfo getPizzaOrders={getPizzaOrders} />
 
     </div>
   );

@@ -1,9 +1,9 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 
-function PizzaList() {
+function MenuList() {
 
-  const pizzas = useSelector((store) => store.pizzasReducer);
+  const pizzas = useSelector((store) => store.menuReducer);
 
   return (
     <div>
@@ -16,4 +16,4 @@ function PizzaList() {
   );
 }
 
-export default PizzaList;
+export default MenuList;

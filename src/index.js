@@ -8,15 +8,25 @@ import { createStore, combineReducers } from 'redux';
 import { Provider } from 'react-redux';
 
 // Pizzas Reducer
-const pizzasReducer = (state = [], action) => {
+const menuReducer = (state = [], action) => {
     if (action.type === 'SET_PIZZAS') {
         return action.payload
     }
     return state;
 };
 
+// customerOrders
+const cartReducer = (state = [], action) => {
+    return state;
+}
+
+// customerOrders
+const customerInfoReducer = (state = [], action) => {
+    return state;
+}
+
 // Pizza Orders reducer
-const pizzaOrderList = (state = [], action) => {
+const checkoutInfoReducer = (state = [], action) => {
     if (action.type === 'SET_PIZZA_ORDERS'){
         return action.payload;
     }
@@ -26,8 +36,10 @@ const pizzaOrderList = (state = [], action) => {
 // Create Store Instance
 const storeInstance = createStore(
     combineReducers({
-        pizzasReducer,
-        pizzaOrderList
+        menuReducer,
+        cartReducer,
+        customerInfoReducer,
+        checkoutInfoReducer
     }),
 );
 
