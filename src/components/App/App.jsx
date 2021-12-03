@@ -8,6 +8,7 @@ import { useDispatch } from 'react-redux';
 
 // Import Components
 import PizzaList from '../PizzaList/PizzaList.jsx';
+import PizzaOrders from '../PizzaOrders/PizzaOrders.jsx'
 
 function App() {
 
@@ -37,7 +38,7 @@ function App() {
   };
 
   // axios GET request for pizza orders
-  getPizzaOrders = () => {
+  const getPizzaOrders = () => {
     axios({
       method: 'GET',
       url: '/api/order'
