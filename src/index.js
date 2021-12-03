@@ -4,8 +4,9 @@ import './index.css';
 import App from './components/App/App';
 
 // IMPORT REDUX
-import { createStore, combineReducers } from 'redux';
+import { createStore, combineReducers, applyMiddleware  } from 'redux';
 import { Provider } from 'react-redux';
+import logger from 'redux-logger';
 
 // Pizzas Reducer
 const menuReducer = (state = [], action) => {
@@ -17,15 +18,13 @@ const menuReducer = (state = [], action) => {
 
 // customerOrders
 const cartReducer = (state = [], action) => {
-    let cart = [];
     switch (action.type) {
         case 'ADD_PIZZA_TO_CART':
             return [...state, action.payload];
         case 'REMOVE_PIZZA_FROM_CART':
-            cart = cart.filter(function (cartItem) {
+            return state.filter(function (cartItem) {
                 return cartItem.id != action.payload.id;
             });
-            return cart;
         default: 
             return state;
     }
@@ -52,6 +51,9 @@ const storeInstance = createStore(
         customerInfoReducer,
         checkoutInfoReducer
     }),
+    applyMiddleware(
+        logger
+    )
 );
 
 ReactDOM.render(<Provider store={storeInstance}><App /></Provider>, document.getElementById('root'));
