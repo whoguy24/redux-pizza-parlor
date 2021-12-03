@@ -17,7 +17,18 @@ const menuReducer = (state = [], action) => {
 
 // customerOrders
 const cartReducer = (state = [], action) => {
-    return state;
+    let cart = [];
+    switch (action.type) {
+        case 'ADD_PIZZA_TO_CART':
+            return [...state, action.payload];
+        case 'REMOVE_PIZZA_FROM_CART':
+            cart = cart.filter(function (cartItem) {
+                return cartItem.id != action.payload.id;
+            });
+            return cart;
+        default: 
+            return state;
+    }
 }
 
 // customerOrders
