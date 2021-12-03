@@ -9,6 +9,7 @@ import { useDispatch } from 'react-redux';
 // Import Components
 import MenuList from '../MenuList/MenuList.jsx';
 import CustomerInfo from '../CustomerInfo/CustomerInfo.jsx'
+import PostOrder from '../PostOrder/PostOrder';
 
 function App() {
 
@@ -63,6 +64,7 @@ function App() {
 
       <MenuList />
       <CustomerInfo getPizzaOrders={getPizzaOrders} />
+      
 
     </div>
   );

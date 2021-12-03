@@ -18,12 +18,15 @@ const menuReducer = (state = [], action) => {
 // customerOrders
 const cartReducer = (state = [], action) => {
     return state;
-}
+} //going to store a list of objects (pizzas) we added to the cart & also removes when user removes
 
 // customerOrders
 const customerInfoReducer = (state = [], action) => {
     return state;
-}
+}//where customer enters in their information and that info will get rapped up into an object
+//the object will get stored in this reducer
+//& that info will get stored into the database under orders
+//
 
 // Pizza Orders reducer
 const checkoutInfoReducer = (state = [], action) => {
@@ -31,7 +34,8 @@ const checkoutInfoReducer = (state = [], action) => {
         return action.payload;
     }
     return state;
-}
+}//customers order and customers info will store all this into the database called LineItem
+// this ties the customer with the pizzas they orders using id's
 
 // Create Store Instance
 const storeInstance = createStore(
