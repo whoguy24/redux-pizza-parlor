@@ -54,9 +54,10 @@ axios({
 }//end handleSubmit function
 
 return (
-    <form>
-        
-    </form>
+    <p>
+        This is where the checkout is, kinda
+
+    </p>
     
 )
 
@@ -64,3 +65,5 @@ return (
 
 
 };
+
+export default UserCheckout;

@@ -21,38 +21,41 @@ function CustomerInfo(){
   //added more stuff
 
   return (
-    <div>
+
+    <>
+      <div>
+        <input
+          value={customer_name}
+          onChange={(event) => {setCustomerName(event.target.value)}}
+          placeholder="Name" />
+      </div>
+
+      <div>
       <input
-        value={customer_name}
-        onChange={(event) => {setCustomerName(event.target.value)}}
-        placeholder="Name" />
-    </div>
+        value={street_address}
+        onChange={(event) => {setStreetAddress(event.target.value)}}
+        placeholder="Street Address" />
+      </div>
 
-    <div>
-    <input
-      value={street_address}
-      onChange={(event) => {setStreetAddress(event.target.value)}}
-      placeholder="Street Address" />
-    </div>
+      <div>
+      <input
+        value={city}
+        onChange={(event) => {setCity(event.target.value)}}
+        placeholder="City" />
+      </div>
 
-    <div>
-    <input
-      value={city}
-      onChange={(event) => {setCity(event.target.value)}}
-      placeholder="City" />
-    </div>
+      <div>
+      <input
+        value={zip}
+        onChange={(event) => {setZip(event.target.value)}}
+        placeholder="Zip" />
+      </div>
 
-    <div>
-    <input
-      value={zip}
-      onChange={(event) => {setZip(event.target.value)}}
-      placeholder="Zip" />
-    </div>
-
-    <div>
-      <button onClick={onCustomerInfoSubmit}>Next</button>
-    </div>
-
+      <div>
+        {/* <button onClick={onCustomerInfoSubmit}>Next</button> */}
+        <button>Next</button>
+      </div>
+    </>
 
   )
 

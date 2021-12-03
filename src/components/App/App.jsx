@@ -63,7 +63,8 @@ function App() {
 
       <MenuList />
       {/* <CustomerInfo getPizzaOrders={getPizzaOrders} /> */}
-      <CustomerInfo/>
+      <CustomerInfo />
+
 
     </div>
   );
